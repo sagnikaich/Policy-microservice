@@ -20,10 +20,7 @@ public class ProductController {
         return policyService.getALlPolicies();
     }
 
-    @GetMapping("/{id}")
-    public Policy getPolicyById(@PathVariable Long id) {
-        return policyService.getPolicyById(id);
-    }
+
 
     @PostMapping
     public Policy createPolicy(@RequestBody Policy policy){
@@ -35,4 +32,18 @@ public class ProductController {
         policyService.deletePolicy(id);
     }
 
+    @GetMapping("/search")
+    public List<Policy> searchPoliciesByName(@RequestParam String keyword) {
+        return policyService.searchPoliciesByName(keyword);
+    }
+
+    @GetMapping("/filter")
+    public List<Policy> filterByMaxPremium(@RequestParam double maxPremium) {
+        return policyService.filterPoliciesByMaxPremium(maxPremium);
+    }
+
+    @GetMapping("/{id}")
+    public Policy getPolicyById(@PathVariable Long id) {
+        return policyService.getPolicyById(id);
+    }
 }

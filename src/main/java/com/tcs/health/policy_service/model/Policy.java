@@ -6,9 +6,17 @@
 package com.tcs.health.policy_service.model;
 
 import jakarta.persistence.*;
-        import java.util.List;
+import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
+
+import java.util.List;
 
 @Entity
+@Getter
+@Setter
+@Data
+@Table(name = "table_2")
 public class Policy {
 
     @Id
