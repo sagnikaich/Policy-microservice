@@ -3,13 +3,13 @@
 //public class Product {
 //}
 
-package com.healthinsurance.policyapp.model;
+package com.tcs.health.policy_service.model;
 
 import jakarta.persistence.*;
         import java.util.List;
 
 @Entity
-public class Product {
+public class Policy {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
